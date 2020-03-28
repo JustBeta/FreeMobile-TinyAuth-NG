@@ -3,14 +3,14 @@
 // @namespace      freemobile
 // @description    Retour à l'ancien mode d'identification sur FreeMobile.
 // @include        https://mobile.free.fr/*
-// @updateURL
-// @version        2.7
+// @updateURL      https://github.com/JustBeta/FreeMobile-TinyAuth-NG/raw/master/FreeMobile%20TinyAuth-NG.user.js
+// @version        2.8
 // @grant          none
 // @run-at         document-start
 // ==/UserScript==
 (function () {
 
-var version = 2.7;
+var version = 2.8;
 
 var debug = false;
 var imgs = [];
@@ -550,7 +550,7 @@ var sendForm = function (e) {
     } catch(e) {
         displayPanel();
         var span = document.createElement("span");
-        span.innerHTML = newInput.value+'Détection automatique impossible : <a href="https://userscripts-mirror.org/scripts/show/126488">surveillez les mises à jour</a>.';
+        span.innerHTML = newInput.value+'Détection automatique impossible : <a href="https://github.com/JustBeta/FreeMobile-TinyAuth-NG/raw/master/FreeMobile%20TinyAuth-NG.user.js">surveillez les mises à jour</a>.';
         span.style.fontWeight = "bold";
         document.getElementById("ident_blocd").insertBefore(span,
             document.getElementById("ident_div_ident"));
@@ -588,11 +588,12 @@ var drawScriptPanel = function () {
     style.innerHTML += " -->";
     document.head.appendChild(style);
 
-    var url = isOpera?"http://ilatumi.org/FreeMobile_TinyAuth.oex":"https://userscripts-mirror.org/scripts/source/126488.user.js";
+//    var url = isOpera?"http://ilatumi.org/FreeMobile_TinyAuth.oex":"https://github.com/JustBeta/FreeMobile-TinyAuth-NG/raw/master/FreeMobile%20TinyAuth-NG.user.js";
+    var url = "https://github.com/JustBeta/FreeMobile-TinyAuth-NG/raw/master/FreeMobile%20TinyAuth-NG.user.js";
     var container = document.createElement("div");
     container.setAttribute("class", "tinyAuthContainer");
     var contentHTML = "";
-    contentHTML += '<span class="title">TinyAuth-NG '+version+'</span> : <a href="https://userscripts-mirror.org/scripts/show/126488">Home</a> | ';
+    contentHTML += '<span class="title">TinyAuth-NG '+version+'</span> : <a href="https://github.com/JustBeta/FreeMobile-TinyAuth-NG">Home</a> | ';
 //    contentHTML += '<a href="'+url+'">';
 //    contentHTML += '<img src="http://ilatumi.org/tinyauth-freemobile/version.php?v='+version+'" alt="Test de version en cours …" style="vertical-align: middle;" /></a>';
     contentHTML += '<div class="infos">';
@@ -701,4 +702,3 @@ if (typeof unsafeWindow != "undefined") {
 }
 
 })();
-
